@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEGHVORA - About</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: radial-gradient(circle at 80% 20%, rgba(128, 0, 128, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 20% 80%, rgba(128, 0, 128, 0.05) 0%, transparent 45%),
+                #fafbfc;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* NAVBAR */
+        nav {
+            background: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+
+
+
+        .logo img {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo h2 {
+            color: #8a05a8;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 35px;
+            list-style: none;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #800080;
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #800080;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+
+
+        /* HERO */
+
+        .about {
+            padding: 60px 8%;
+            text-align: center;
+        }
+
+        .about h1 {
+            font-size: 55px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .about h1 span {
+            color: #800080;
+        }
+
+        .about-text {
+            max-width: 900px;
+            margin: auto;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* COMPANY BOX */
+
+        .company-box {
+            max-width: 1100px;
+            margin: 50px auto;
+            background: white;
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+        }
+
+        .company-box h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .company-box p {
+            font-size: 17px;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* FOUNDERS */
+
+        .founders {
+            padding: 20px 8% 60px;
+        }
+
+        .founders h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 40px;
+        }
+
+        .founders h2 span {
+            color: #800080;
+        }
+
+        .founder {
+            background: white;
+            border-radius: 25px;
+            padding: 35px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, .05);
+            overflow: hidden
+        }
+
+        .left {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            flex: 1;
+        }
+
+        .left img {
+    width: 130px;
+    height: 130px;
+    min-width: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    border: 4px solid #800080;
+    display: block;
+    flex-shrink: 0;
+}
+
+
+        .info h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            margin-top: 0;
+            line-height: 1;
+        }
+
+        .info h3 {
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+        .info h4 {
+            font-size: 18px;
+            color: #800080;
+            margin-bottom: 10px;
+        }
+
+        .info p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        .divider {
+            width: 2px;
+            height: 120px;
+            background: #ddd;
+        }
+
+        .quote {
+            flex: 1;
+            font-size: 18px;
+            line-height: 1.8;
+            font-style: italic;
+            color: #444;
+        }
+
+        /* FOOTER */
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            font-size: 15px;
+            color: #777;
+        }
+
+        /* RESPONSIVE */
+
+        @media(max-width:900px) {
+
+
+            .about h1 {
+                font-size: 42px;
+            }
+
+
+            .founder {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .left {
+                flex-direction: column;
+            }
+
+            .divider {
+                display: none;
+            }
+
+            .quote {
+                font-size: 16px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+
+        <a href="index.html" class="logo">
+            <img src="DEGHVORA LOGO.jpeg" alt="DEGHVORA Logo">
+            <h2>DEGHVORA</h2>
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="service page.html">Services</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </nav>
+
+    <section class="about">
+
+        <h1>About <span>Us</span></h1>
+
+        <p class="about-text">
+            DEGHVORA is a modern software and creative technology company focused on building innovative digital
+            solutions. We work on client-based projects and also create our own unique products with creativity,
+            innovation, and modern technology.
+        </p>
+
+        <div class="company-box">
+
+            <h2>Who We Are</h2>
+
+            <p>
+                We are passionate developers, designers, and creators who believe in building beyond limits. Our mission
+                is to deliver high-quality websites, applications, branding solutions, and software products that help
+                businesses grow digitally. DEGHVORA combines creativity with technology to create premium experiences.
+            </p>
+
+        </div>
+
+    </section>
+
+    <section class="founders">
+
+        <h2>Our <span>Founders</span></h2>
+
+        <div class="founder">
+
+            <div class="left">
+            <img src="dhivakar5.png" style="object-position:center 35%;">        
+        <div class="info">
+                    <h3>Dhivakar M</h3>
+                    <h4>CEO & Founder</h4>
+                    <p>Visionary leader driving innovation and future-ready digital solutions.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote">
+                “Our mission is to transform ideas into impactful digital experiences that create lasting value.”
+            </div>
+
+        </div>
+
+        <div class="founder">
+
+            <div class="left">
+                <img src="gopi3.png" style="object-position:center 35%;">
+                <div class="info">
+                    <h3>Gopinath K</h3>
+                    <h4>Co-Founder</h4>
+                    <p>Passionate full-stack developer building modern web experiences.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote">
+                “Technology becomes meaningful when it solves real-world problems.”
+            </div>
+
+        </div>
+
+        <div class="founder">
+
+            <div class="left">
+                <img src="gowtham1.png" style="object-position:center 35%;">
+                <div class="info">
+                    <h3>Gowtham M</h3>
+                    <h4>Co-Founder</h4>
+                    <p>Creative thinker focused on innovation, teamwork and execution.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote">
+                “Innovation starts where imagination meets action.”
+            </div>
+
+        </div>
+
+        <div class="founder">
+
+            <div class="left">
+                <img src="deepak1.png" style="object-position:center 35%;">
+                <div class="info">
+                    <h3>Deepak G</h3>
+                    <h4>Co-Founder</h4>
+                    <p>Dedicated software creator passionate about technology and digital growth.</p>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="quote">
+                “Success is built through teamwork, consistency and continuous learning.”
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 DEGHVORA | Build Beyond Limits
+    </footer>
+
+</body>
+
+</html>

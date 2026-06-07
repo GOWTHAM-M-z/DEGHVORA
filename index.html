@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DEGHVORA - Home</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at 80% 20%, rgba(128, 0, 128, 0.05) 0%, transparent 45%),
+                radial-gradient(circle at 20% 80%, rgba(128, 0, 128, 0.05) 0%, transparent 45%),
+                #fafbfc;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #1a1a1a;
+    overflow-x: hidden;
+}
+
+/* NAVBAR */
+nav{
+    background: transparent;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 8%;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+    transition: transform 0.3s ease;
+}
+
+
+
+.logo img{
+    width:45px;
+    height:45px;
+
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.logo h2{
+    color:#8a05a8;
+    font-size:28px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:#333;
+    font-size:16px;
+    font-weight:500;
+    position:relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links a::after{
+    content:'';
+    position:absolute;
+    bottom:-5px;
+    left:0;
+    width:0;
+    height:2px;
+    background: #800080;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover{
+    color:#800080;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+/* HERO SECTION */
+.hero {
+    text-align: center;
+    padding: 90px 8% 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 72px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 20px;
+    letter-spacing: -2px;
+    line-height: 1.1;
+}
+
+.hero h1 span {
+    color: #800080;
+}
+
+.hero p.tagline {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 50px;
+    font-weight: 400;
+}
+
+/* HERO CARD */
+.hero-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 55px 60px;
+    border-radius: 28px;
+    box-shadow: 0 15px 40px rgba(128, 0, 128, 0.03), 0 1px 8px rgba(0, 0, 0, 0.01);
+    border: 1px solid rgba(128, 0, 128, 0.04);
+    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(128, 0, 128, 0.08);
+}
+
+.hero-card h2 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.hero-card p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* EXPLORE BUTTON */
+.explore-container {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.explore-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #800080 0%, #a000a0 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 16px 36px;
+    border-radius: 35px;
+    font-weight: 600;
+    font-size: 17px;
+    box-shadow: 0 10px 25px rgba(128, 0, 128, 0.2);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    border: none;
+    cursor: pointer;
+}
+
+.explore-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.explore-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(128, 0, 128, 0.35);
+    background: linear-gradient(135deg, #950095 0%, #b500b5 100%);
+}
+
+.explore-btn:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+.explore-btn:active {
+    transform: translateY(-1px);
+    box-shadow: 0 8px 15px rgba(128, 0, 128, 0.2);
+}
+
+/* WHY US SECTION */
+.why-us {
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(128, 0, 128, 0.04);
+    border-bottom: 1px solid rgba(128, 0, 128, 0.04);
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.why-us h2 {
+    font-size: 38px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 50px;
+}
+
+.why-us-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.why-card {
+    padding: 20px;
+}
+
+.why-icon {
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    background: rgba(128, 0, 128, 0.06);
+    color: #800080;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    margin: 0 auto 25px;
+    font-weight: 800;
+}
+
+.why-card h3 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 15px;
+}
+
+.why-card p {
+    font-size: 15px;
+    line-height: 1.7;
+    color: #666;
+}
+
+/* CTA SECTION */
+.cta-section {
+    padding: 90px 8%;
+    text-align: center;
+}
+
+.cta-card {
+    background: linear-gradient(135deg, #800080 0%, #9e009e 100%);
+    border-radius: 32px;
+    padding: 70px 40px;
+    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    box-shadow: 0 20px 50px rgba(128, 0, 128, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 350px;
+    height: 350px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.cta-card h2 {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 20px;
+    letter-spacing: -0.5px;
+}
+
+.cta-card p {
+    font-size: 18px;
+    max-width: 650px;
+    margin: 0 auto 35px;
+    opacity: 0.9;
+    line-height: 1.6;
+}
+
+.cta-btn {
+    display: inline-block;
+    background: #ffffff;
+    color: #800080;
+    text-decoration: none;
+    padding: 16px 40px;
+    border-radius: 35px;
+    font-weight: 700;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cta-btn:hover {
+    transform: translateY(-3px);
+    background: #fbf9ff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* FOOTER */
+footer {
+    padding: 40px 8%;
+    text-align: center;
+    border-top: 1px solid rgba(128, 0, 128, 0.04);
+    margin-top: auto;
+}
+
+footer p {
+    font-size: 15px;
+    color: #888;
+    font-weight: 500;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    .hero {
+        padding: 60px 4% 40px;
+    }
+    .hero h1 {
+        font-size: 48px;
+    }
+    .hero-card {
+        padding: 35px 30px;
+    }
+    .hero-card h2 {
+        font-size: 28px;
+    }
+    .cta-card h2 {
+        font-size: 32px;
+    }
+    .cta-card {
+        padding: 50px 20px;
+    }
+}
+</style>
+</head>
+<body>
+
+<nav>
+<a href="index.html" class="logo">
+    <img src="DEGHVORA LOGO.jpeg" alt="DEGHVORA Logo">
+    <h2>DEGHVORA</h2>
+</a>
+
+<div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="service page.html">Services</a>
+    <a href="projects.html">Projects</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero">
+    <h1>
+       Welcome to <span>DEGHVORA</span>
+
+    </h1>
+    <p class="tagline">
+        Your life's work, powered by our life's work.
+    </p>
+
+    <div class="hero-card">
+        <h2>Building Solutions & Creating Innovations </h2>
+        <p>
+           We works on client-based projects and delivers custom solutions according to their requirements. Along with client services, we also develop our own innovative products and projects.”
+        </p>
+    </div>
+
+    <div class="explore-container">
+        <a href="service page.html" class="explore-btn">
+            Explore Services
+            <svg class="arrow-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+        </a>
+    </div>
+</section>
+
+<!-- Why Us Section -->
+<section id="why-us" class="why-us">
+    <h2>Why Work With Us</h2>
+    <div class="why-us-grid">
+        <div class="why-card">
+            <h3>Better Performance</h3>
+            <p>We build highly optimized websites and software that load at lightspeed to keep your users engaged.</p>
+        </div>
+        <div class="why-card">
+            <h3>Stunning Designs </h3>
+            <p>Our bespoke UI/UX designs are tailored to captivate your audience and elevate your brand identity.</p>
+        </div>
+        <div class="why-card">
+
+            <h3>Robust Security</h3>
+            <p>We implement top-tier coding practices and security protocols to keep your business and users safe.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <p>© 2026 DEGHVORA | Build Beyond Limits</p>
+</footer>
+
+</body>
+</html>
