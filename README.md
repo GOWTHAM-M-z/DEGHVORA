@@ -43,7 +43,7 @@ DEGHVORA
 
   DEGHVORA
   
-  📧 Email: your-email@example.com
+  📧 Email: deghvora@gmail.com
   🌐 Website: Coming Soon
   📍 Tamil Nadu, India
 
